@@ -1,6 +1,15 @@
 import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/assignments")
+      .then((res) => res.json())
+      .then(setData);
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -8,6 +17,10 @@ function App() {
           <h1>
             <u>Classes</u>
           </h1>
+          <h2>To-do:</h2>
+          {data["CS 435"].map((assmnt, index) => (
+            <p key={index}>{assmnt}</p>
+          ))}
         </div>
         <div className="bubble">
           <h1>

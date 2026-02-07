@@ -6,7 +6,7 @@
   display: grid; 
   grid-template-columns: auto auto auto;
   column-gap: 30px;
-  row-gap: 100px;
+  row-gap: 30px;
 }
 
 .bubble {
@@ -46,4 +46,8 @@ body {
   font-weight: normal;
   font-size: 40px;
   margin: 10px 0;
+}
+
+.container p {
+  margin: 0;
 }
